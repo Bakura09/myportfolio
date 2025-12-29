@@ -20,14 +20,18 @@
     <!-- Nav bar on top -->
     <nav>
       <div class="nav-items">
-        <span><a href="#">Home</a></span>
-        <span>Case Studies</span>
-        <span>Testimonials</span>
-        <span>Recent Work</span>
-        <span>Get in Touch</span>
+        <span><a href="#" class="item-link">Home</a></span>
+        <span><a href="#" class="item-link">Case Studies</a></span>
+        <span><a href="#" class="item-link">Testimonials</a></span>
+        <span><a href="#" class="item-link">Recent Work</a></span>
+        <span><a href="#" class="item-link">Get in Touch</a></span>
       </div>
       <div class="social-icons">
-        <a href="#" class="icon-link">
+        <a
+          href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
+          target="_blank"
+          class="icon-link"
+        >
           <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
         </a>
         <a href="#" class="icon-link">
@@ -42,12 +46,14 @@
       </div>
     </nav>
 
-    <main>
-      <div class="hero">
+    <!-- Main section introduction -->
+    <main class="profile-hero">
+      <div class="introduction">
         <h1>Muayad Alsawalhi</h1>
-        <p>
-          Intro text: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p class="intro-text">
+          Frontend-focused developer learning to turn ideas into fast,
+          user-friendly web experiences using HTML, CSS, JavaScript, and modern
+          tools.
         </p>
         <button type="button" class="btn">
           Let's get started <i class="bi bi-caret-right"></i>
@@ -55,18 +61,69 @@
       </div>
 
       <div class="profile-picture">
-        <img src="/p_projects/assests/images/IMG_1724.JPG" alt="" />
+        <img src="/assests/images/IMG_1724.JPG" alt="" />
       </div>
     </main>
 
-    <footer>
-      <span>Worked with</span>
-      <div class="company-icons">
-        <!-- <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" /> -->
+    <!-- Experience section -->
+    <section class="experience">
+      <p class="exp-head">Worked with</p>
+      <div class="experience-cards-wrapper">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Mumzworld</h3>
+            <p class="job-title">Associate Product Manager</p>
+            <p class="card-text">
+              This is a simple card description. Keep it short and clear.
+            </p>
+
+            <a href="#" class="card-btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">6thStreet</h3>
+            <p class="job-title">Customer Service TeamLeader</p>
+            <p class="card-text">
+              This is a simple card description. Keep it short and clear.
+            </p>
+            <a href="#" class="card-btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Noon</h3>
+            <p class="job-title">Customer Service TeamLeader</p>
+
+            <p class="card-text">
+              This is a simple card description. Keep it short and clear.
+            </p>
+
+            <a href="#" class="card-btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">United Arab Bank</h3>
+            <p class="job-title">Customer Service Agent</p>
+
+            <p class="card-text">
+              This is a simple card description. Keep it short and clear.
+            </p>
+
+            <a href="#" class="card-btn">Learn More</a>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- Footer section  -->
+    <hr />
+    <footer>
+      <span>Made with ❤️ in my room</span>
     </footer>
   </body>
 </html>
