@@ -1,0 +1,27 @@
+@import url(/assests/css/variables.css);
+
+body {
+  background-color: var(--color-black);
+}
+
+form {
+  border: 2px solid var(--color-gray2);
+  border-radius: 12px;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+label {
+  color: #ffffff;
+}
+
+.btn {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn:hover {
+  background-color: var(--color-green2);
+}
