@@ -150,7 +150,7 @@ button:hover {
 
 .experience {
   font-family: "IBM Plex Mono";
-  width: 80%;
+  width: 60%;
   margin-inline: auto;
   margin-bottom: 250px;
   display: flex;
@@ -159,12 +159,13 @@ button:hover {
   align-items: center;
 }
 
-.experience p.exp-head {
+p.exp-head {
   color: #ffffff;
-  padding-left: 10px;
   font-family: "IBM Plex Mono";
   font-size: 1.5rem;
   text-align: left;
+  width: 60%;
+  margin: 0 auto 30px;
 }
 
 /* Experience card container */
@@ -243,8 +244,13 @@ button:hover {
 /* Footer style */
 
 footer {
-  margin-inline: auto;
   height: 50px;
   background-color: var(--color-gray);
   text-align: center;
+  color: #ffffff;
+}
+
+footer p {
+  padding: 10px;
+  margin: 0;
 }
