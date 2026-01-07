@@ -17,8 +17,8 @@ nav {
   font-family: "IBM Plex Mono";
   font-size: 1.2rem;
   width: 80%;
-  height: 130px;
-  margin: 0 auto 0 auto;
+  height: 100px;
+  margin: 0 auto 0;
   background-color: #1b1b1b;
   display: flex;
   justify-content: space-between;
@@ -86,7 +86,7 @@ a.icon-link:focus {
 main {
   width: 60%;
   height: auto;
-  margin: 250px auto;
+  margin: 160px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,6 +123,26 @@ img {
   border-radius: 60px;
 }
 
+/* Interactive text Section */
+
+.interactive-text {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.changing-text-heading,
+.changing-text {
+  font-family: "Raleway";
+  font-size: 5rem;
+  color: #ffffff;
+}
+
+.changing-text {
+  font-family: "IBM Plex Mono";
+  color: #62ba1b;
+}
+
 button {
   display: flex;
   justify-content: center;
@@ -146,111 +166,32 @@ button:hover {
   cursor: pointer;
 }
 
-/* Experience Section */
-
-.experience {
-  font-family: "IBM Plex Mono";
-  width: 60%;
-  margin-inline: auto;
-  margin-bottom: 250px;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-}
-
-p.exp-head {
-  color: #ffffff;
-  font-family: "IBM Plex Mono";
-  font-size: 1.5rem;
-  text-align: left;
-  width: 60%;
-  margin: 0 auto 30px;
-}
-
-/* Experience card container */
-
-.experience-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Experience cards styling */
-
-.card {
-  flex: 0 0;
-  width: 100%;
-  height: 350px;
-  background: #000000;
-  border-radius: 12px;
-  border: 2px solid #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.card-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-title {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-  font-family: "Raleway";
-  color: #ffffff;
-}
-
-.job-title {
-  font-size: 1rem;
-  font-family: "Raleway";
-  color: #ffffff;
-}
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 16px;
-}
-
-.card-btn {
-  display: inline-block;
-  padding: 10px 16px;
-  background: #3f8e00;
-  color: #fff;
+a.get-started {
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 100px;
 }
 
-.card-btn:hover {
-  background-color: var(--color-green);
-  border-color: var(--color-green2);
+a.get-started:hover,
+a.get-started:visited,
+a.get-started:focus,
+a.get-started:active {
+  text-decoration: none;
 }
+
+/* Experience Section */
 
 /* Footer style */
 
 footer {
-  height: 50px;
-  background-color: var(--color-gray);
-  text-align: center;
-  color: #ffffff;
-}
-
-footer p {
-  padding: 10px;
-  margin: 0;
+  font-family: "IBM Plex Mono";
+  font-size: 1.2rem;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto 0;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 100px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
