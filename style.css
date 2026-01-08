@@ -3,10 +3,10 @@
 @import url(./assests/css/variables.css);
 
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
   font-family: "IBM Plex Mono";
   font-size: 16px;
-  background-color: #000000;
-  color: #9c9c9c;
   height: 100vh;
   margin: 0;
 }
@@ -14,12 +14,13 @@ body {
 /* Navigation bar styles */
 
 nav {
+  background-color: var(--forground-color);
+  color: var(--text-color-secondary);
   font-family: "IBM Plex Mono";
-  font-size: 1.2rem;
+  font-size: 1.37rem;
   width: 80%;
   height: 100px;
   margin: 0 auto 0;
-  background-color: #1b1b1b;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +63,17 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 70px;
+}
+
+.social-icons .icons {
+  display: flex;
   gap: 25px;
+  font-size: 2rem;
+}
+
+.bi {
+  font-size: 1.7rem;
 }
 
 i:hover {
@@ -103,12 +114,11 @@ main {
 h1 {
   font-size: 3rem;
   margin: 0;
-  color: #ffffff;
   font-family: "Raleway";
 }
 
 p.intro-text {
-  color: #9c9c9c;
+  color: var(--text-color-secondary);
   font-family: "IBM Plex Mono";
   font-size: 1.5rem;
   margin-top: 10px;
@@ -127,30 +137,29 @@ img {
 
 .interactive-text {
   width: 60%;
-  margin: 0 auto;
+  margin: 67px auto 0;
   text-align: center;
 }
 
 .changing-text-heading,
 .changing-text {
   font-family: "Raleway";
-  font-size: 5rem;
-  color: #ffffff;
+  font-size: 3rem;
 }
 
 .changing-text {
   font-family: "IBM Plex Mono";
-  color: #62ba1b;
+  color: var(--accent-color-primary);
 }
 
-button {
+button.get-started {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 20px;
   background-color: #3f8e00;
-  color: #ffffff;
+  color: var(--text-color-primary);
   font-family: "IBM Plex Mono";
   font-weight: bold;
   font-size: 1.5rem;
@@ -185,9 +194,9 @@ footer {
   font-family: "IBM Plex Mono";
   font-size: 1.2rem;
   width: 80%;
-  height: 100px;
+  height: 90px;
   margin: 0 auto 0;
-  background-color: #1b1b1b;
+  background-color: var(--forground-color);
   display: flex;
   justify-content: center;
   align-items: center;

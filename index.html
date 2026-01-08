@@ -16,35 +16,64 @@
     <!-- CSS file -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-theme="dark">
     <!-- Nav bar on top -->
+
     <nav>
       <div class="nav-items">
-        <span><a href="#" class="item-link">Home</a></span>
-        <span><a href="#" class="item-link">Case Studies</a></span>
-        <span><a href="#" class="item-link">Testimonials</a></span>
-        <span><a href="#" class="item-link">Recent Work</a></span>
-        <span><a href="#" class="item-link">Get in Touch</a></span>
+        <span><a href="#home" class="item-link">Home</a></span>
+        <span><a href="#about" class="item-link">About</a></span>
+        <span><a href="#recent-work" class="item-link">Recent Work</a></span>
+        <span
+          ><a
+            href="http://127.0.0.1:5500/pages/contact-us.html"
+            target="_blank"
+            class="item-link"
+            >Get in Touch</a
+          >
+        </span>
       </div>
       <div class="social-icons">
-        <a
-          href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
-          target="_blank"
-          class="icon-link"
-        >
-          <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
-        </a>
-        <a href="#" class="icon-link">
-          <i class="bi bi-github" style="font-size: 1.5rem"></i>
-        </a>
-        <a href="#" class="icon-link">
-          <i class="bi bi-discord" style="font-size: 1.5rem"></i>
-        </a>
-        <a href="#" class="icon-link">
-          <i class="bi bi-behance" style="font-size: 1.5rem"></i>
-        </a>
+        <div class="icons">
+          <a
+            href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/Bakura09?tab=repositories"
+            class="icon-link"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="#" class="icon-link">
+            <i class="bi bi-discord"></i>
+          </a>
+          <a href="#" class="icon-link">
+            <i class="bi bi-behance"></i>
+          </a>
+        </div>
+        <div class="theme">
+          <button class="btn" onclick="toggleTheme()">
+            <i
+              class="bi bi-moon-stars-fill"
+              role="button"
+              id="toggle-theme"
+            ></i>
+          </button>
+        </div>
       </div>
     </nav>
+
+    <!-- Interactive text section -->
+
+    <section class="interactive-text">
+      <h2 class="changing-text-heading">
+        I Build <span class="changing-text"></span>
+      </h2>
+    </section>
 
     <!-- Main section introduction -->
     <main class="profile-hero">
@@ -62,7 +91,7 @@
           rel="noopener noreferrer"
           class="get-started"
         >
-          <button type="button" class="btn">
+          <button type="button" class="btn get-started">
             Let's get started <i class="bi bi-caret-right"></i>
           </button>
         </a>
@@ -73,14 +102,6 @@
       </div>
     </main>
 
-    <!-- Interactive text section -->
-
-    <section class="interactive-text">
-      <h2 class="changing-text-heading">
-        I Build <span class="changing-text"></span>
-      </h2>
-    </section>
-
     <!-- Experience section -->
 
     <!-- Footer section  -->
@@ -90,15 +111,15 @@
 
     <!-- Js Scripts -->
 
-    <script src="main.js"></script>
+    <script src="/assests/scripts/dark-light-mode.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed(".changing-text", {
         strings: [
-          "Products",
-          "Systems",
-          "Customer journeys",
-          "Scalable platforms",
+          "interactive user interfaces",
+          "responsive web experiences",
+          "accessible front-ends",
+          "performant UI systems",
         ],
         typeSpeed: 70,
         backDelay: 700,
