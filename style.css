@@ -96,8 +96,8 @@ a.icon-link:focus {
 
 main {
   width: 60%;
-  height: auto;
-  margin: 160px auto;
+  height: 70%;
+  margin: 66px auto;
   display: flex;
   justify-content: center;
   align-items: center;
