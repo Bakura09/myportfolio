@@ -96,7 +96,7 @@ a.icon-link:focus {
 
 main {
   width: 60%;
-  height: 70%;
+  /* height: 70%; */
   margin: 66px auto;
   display: flex;
   justify-content: center;
@@ -193,8 +193,8 @@ a.get-started:active {
 footer {
   font-family: "IBM Plex Mono";
   font-size: 1.2rem;
-  width: 80%;
-  height: 90px;
+  width: 100%;
+  height: 50px;
   margin: 0 auto 0;
   background-color: var(--forground-color);
   display: flex;
@@ -203,4 +203,7 @@ footer {
   padding-inline: 100px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
