@@ -1,12 +1,12 @@
 @import url(/assests/css/variables.css);
 
 body {
-  background-color: var(--color-black);
+  background-color: var(--bg-color);
   font-family: "IBM Plex Mono";
 }
 
 form {
-  border: 2px solid var(--color-gray2);
+  border: 2px solid var(--accent-color-primary);
   border-radius: 12px;
 }
 
@@ -20,10 +20,10 @@ label {
 }
 
 .btn {
-  color: var(--color-green);
-  border-color: var(--color-green);
+  color: var(--accent-color-primary);
+  border-color: var(--accent-color-primary);
 }
 
 .btn:hover {
-  background-color: var(--color-green2);
+  background-color: var(--accent-color-secondary);
 }
