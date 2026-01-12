@@ -11,7 +11,6 @@ const lightTheme = "light";
 
 function toggleTheme() {
   const currentTheme = document.body.getAttribute("data-theme");
-  // const newTheme = currentTheme === "dark" ? "light" : "dark";
 
   if (currentTheme === "dark") {
     document.body.setAttribute("data-theme", lightTheme);
