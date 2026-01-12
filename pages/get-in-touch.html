@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muayad SA | Software Engineer</title>
+    <title>Muayad SA | Get in Touch</title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,7 @@
     />
 
     <!-- CSS file -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assests/css/contact-us.css" />
   </head>
 
   <body data-theme="dark">
@@ -69,69 +69,48 @@
     </nav>
 
     <!-- Main -->
-    <main class="profile-hero">
-      <!-- Interactive text section -->
-      <section class="interactive-text">
-        <h2 class="changing-text-heading">
-          I Build <span class="changing-text"></span>
-        </h2>
-      </section>
+    <main>
+      <form action="submission.html" method="POST">
+        <h1>Submit a Job Request</h1>
 
-      <div class="container">
-        <section class="introduction">
-          <h1>Muayad Alsawalhi</h1>
-          <p class="intro-text">
-            Frontend-focused developer learning to turn ideas into fast,
-            user-friendly web experiences using HTML, CSS, JavaScript, and
-            modern tools.
-          </p>
+        <p>Please fill the information below:</p>
 
-          <a
-            href="http://127.0.0.1:5500/pages/contact-us.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="get-started"
-          >
-            <button type="button" class="btn get-started">
-              Let's get started <i class="bi bi-caret-right"></i>
-            </button>
-          </a>
-        </section>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control" />
 
-        <section class="profile-picture">
-          <img src="/assests/images/IMG_1724.JPG" alt="" />
-        </section>
-      </div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="name@example.com"
+          class="form-control"
+        />
 
-      <section class="skills" id="skills">
-        skills i learned in codecademy
-      </section>
+        <label for="budget">Budget</label>
+        <select name="budget" id="budget" class="form-control">
+          <option value="$500">&lt;$500</option>
+          <option value="$500">&lt;$1000</option>
+          <option value="$500">&lt;$5000</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Write your request details"
+          rows="5"
+          cols="30"
+          class="form-control"
+        ></textarea>
+
+        <input type="submit" value="Submit" />
+      </form>
     </main>
 
     <!-- Footer section -->
     <footer>
       <p>Made with 🧡 in Dubai</p>
     </footer>
-
-    <!-- JS Theme Script -->
-    <script src="/assests/scripts/dark-light-mode.js"></script>
-    <!-- JS Update homePage -->
-    <script src="#"></script>
-    <!-- JS interactive text Script -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed(".changing-text", {
-        strings: [
-          "Interactive user interfaces",
-          "Responsive web experiences",
-          "Accessible front-ends",
-          "Performant UI systems",
-        ],
-        typeSpeed: 70,
-        backDelay: 700,
-        loop: true,
-        loopCount: Infinity,
-      });
-    </script>
   </body>
 </html>

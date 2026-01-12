@@ -1,29 +1,143 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 @import url(/assests/css/variables.css);
 
 body {
   background-color: var(--bg-color);
   font-family: "IBM Plex Mono";
+  margin: 0;
+  height: 100lvh;
+}
+
+nav {
+  background-color: var(--forground-color);
+  color: var(--text-color-secondary);
+  font-family: "IBM Plex Mono";
+  font-size: 1.37rem;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 50px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Menu items styles */
+
+.nav-items {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+a.item-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.item-link:visited,
+a.item-link:hover,
+a.item-link:active,
+a.item-link:focus {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* SocialMedia Links icons */
+
+.social-icons {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
+.social-icons .icons {
+  display: flex;
+  gap: 25px;
+  font-size: 2rem;
+}
+
+.bi {
+  font-size: 1.7rem;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+a.icon-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.icon-link:visited,
+a.icon-link:hover,
+a.icon-link:active,
+a.icon-link:focus {
+  color: inherit;
+}
+
+main {
+  width: 70%;
+  height: 70%;
+  margin: 70px auto 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
-  border: 2px solid var(--accent-color-primary);
+  border: 2px solid var(--forground-color);
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 50px;
+  width: 50%;
 }
 
 h1 {
-  color: #ffffff;
+  color: var(--accent-color-primary);
   font-family: "Raleway";
+  text-align: center;
 }
 
 label {
   color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 
-.btn {
-  color: var(--accent-color-primary);
-  border-color: var(--accent-color-primary);
+.form-control {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 30px;
 }
 
-.btn:hover {
-  background-color: var(--accent-color-secondary);
+footer {
+  color: var(--text-color-secondary);
+  font-family: "IBM Plex Mono";
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
 }
