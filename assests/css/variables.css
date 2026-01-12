@@ -9,11 +9,13 @@
 }
 /* light mode */
 [data-theme="light"] {
-  --bg-color: #e4e5f1;
-  --forground-color: #fafafa;
-  --text-color-primary: #000000;
-  --text-color-secondary: #1b1b1b;
-  --text-color-optional: #ffffff;
-  --accent-color-primary: #62ba1b;
-  --accent-color-secondary: #3f8e00;
+  --bg-color: #fafafa;
+  --forground-color: #9394a5;
+
+  --text-color-primary: #1b1b1b;
+  --text-color-secondary: #ffffff;
+  --text-color-optional: #;
+
+  --accent-color-primary: #484b6a;
+  --accent-color-secondary: #9394a5;
 }

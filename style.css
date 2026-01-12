@@ -163,8 +163,8 @@ button.get-started {
   align-items: center;
   gap: 10px;
   padding: 20px;
-  background-color: #3f8e00;
-  color: var(--text-color-primary);
+  background-color: var(--accent-color-primary);
+  color: var(--text-color-secondary);
   font-family: "IBM Plex Mono";
   font-weight: bold;
   font-size: 1.5rem;
@@ -205,4 +205,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
 }
