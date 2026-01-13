@@ -7,8 +7,14 @@ body {
   color: var(--text-color-primary);
   font-family: "IBM Plex Mono";
   font-size: 16px;
-  height: 100lvh;
+  /* height: 100lvh; */
   margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Navigation bar styles */
@@ -164,7 +170,7 @@ button.get-started {
   gap: 10px;
   padding: 20px;
   background-color: var(--accent-color-primary);
-  color: var(--text-color-secondary);
+  color: var(--text-color-primary);
   font-family: "IBM Plex Mono";
   font-weight: bold;
   font-size: 1.5rem;
@@ -191,7 +197,27 @@ a.get-started:active {
   text-decoration: none;
 }
 
-/* Experience Section */
+.skills {
+  color: var(--text-color-primary);
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-head h2 {
+  font-family: "Raleway";
+  font-size: 3rem;
+}
+
+.skill-icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 3rem;
+  color: var(--text-color-secondary);
+}
 
 /* Footer style */
 
@@ -205,6 +231,4 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
 }

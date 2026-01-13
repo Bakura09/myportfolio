@@ -2,8 +2,10 @@
   /* dark mode */
   --bg-color: #000000;
   --forground-color: #1b1b1b;
+
   --text-color-primary: #ffffff;
   --text-color-secondary: #9c9c9c;
+
   --accent-color-primary: #62ba1b;
   --accent-color-secondary: #3f8e00;
 }
@@ -13,7 +15,7 @@
   --forground-color: #9394a5;
 
   --text-color-primary: #1b1b1b;
-  --text-color-secondary: #ffffff;
+  --text-color-secondary: #1b1b1b;
   --text-color-optional: #;
 
   --accent-color-primary: #484b6a;

@@ -13,105 +13,128 @@
       rel="stylesheet"
     />
 
+    <!-- CSS fontawesome -->
+    <link href="/assests/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assests/fontawesome/css/brands.css" rel="stylesheet" />
     <!-- CSS file -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body data-theme="dark">
-    <!-- Navigation Bar -->
-    <nav>
-      <div class="nav-items">
-        <span><a href="#home" class="item-link">Home</a></span>
-        <span><a href="#about" class="item-link">About</a></span>
-        <span><a href="#recent-work" class="item-link">Recent Work</a></span>
-        <span
-          ><a
-            href="http://127.0.0.1:5500/pages/contact-us.html"
-            target="_blank"
-            class="item-link"
-            >Get in Touch</a
-          >
-        </span>
-      </div>
-      <div class="social-icons">
-        <div class="icons">
-          <a
-            href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
-            target="_blank"
-            class="icon-link"
-          >
-            <i class="bi bi-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Bakura09?tab=repositories"
-            class="icon-link"
-          >
-            <i class="bi bi-github"></i>
-          </a>
-          <a href="#" class="icon-link">
-            <i class="bi bi-discord"></i>
-          </a>
-          <a href="#" class="icon-link">
-            <i class="bi bi-behance"></i>
-          </a>
+    <!-- page-wrapper -->
+    <div class="page-wrapper">
+      <!-- Navigation Bar -->
+      <nav>
+        <!-- nav page navigation -->
+        <div class="nav-items">
+          <span><a href="#home" class="item-link">Home</a></span>
+          <span><a href="#about" class="item-link">About</a></span>
+          <span><a href="#recent-work" class="item-link">Recent Work</a></span>
+          <span
+            ><a
+              href="http://127.0.0.1:5500/pages/contact-us.html"
+              target="_blank"
+              class="item-link"
+              >Get in Touch</a
+            >
+          </span>
         </div>
-        <div class="theme">
-          <i
-            onclick="toggleTheme()"
-            class="bi bi-moon-stars-fill btn"
-            role="button"
-            id="themeToggle"
-            tabindex="0"
-            aria-label="Toggle dark mode"
-          ></i>
+
+        <!-- nav socialmedia -->
+        <div class="social-icons">
+          <!-- SM icons -->
+          <div class="icons">
+            <a
+              href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
+              target="_blank"
+              class="icon-link"
+            >
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/Bakura09?tab=repositories"
+              class="icon-link"
+            >
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="icon-link">
+              <i class="bi bi-discord"></i>
+            </a>
+            <a href="#" class="icon-link">
+              <i class="bi bi-behance"></i>
+            </a>
+          </div>
+          <!-- Toggle theme icon -->
+          <div class="theme">
+            <i
+              onclick="toggleTheme()"
+              class="bi bi-moon-stars-fill btn"
+              role="button"
+              id="themeToggle"
+              tabindex="0"
+              aria-label="Toggle dark mode"
+            ></i>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!-- Main -->
-    <main class="profile-hero">
-      <!-- Interactive text section -->
-      <section class="interactive-text">
-        <h2 class="changing-text-heading">
-          I Build <span class="changing-text"></span>
-        </h2>
-      </section>
-
-      <div class="container">
-        <section class="introduction">
-          <h1>Muayad Alsawalhi</h1>
-          <p class="intro-text">
-            Frontend-focused developer learning to turn ideas into fast,
-            user-friendly web experiences using HTML, CSS, JavaScript, and
-            modern tools.
-          </p>
-
-          <a
-            href="http://127.0.0.1:5500/pages/contact-us.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="get-started"
-          >
-            <button type="button" class="btn get-started">
-              Let's get started <i class="bi bi-caret-right"></i>
-            </button>
-          </a>
+      <!-- Main Content -->
+      <main class="profile-hero">
+        <!-- Interactive text section -->
+        <section class="interactive-text">
+          <h2 class="changing-text-heading">
+            I Build <span class="changing-text"></span>
+          </h2>
         </section>
 
-        <section class="profile-picture">
-          <img src="/assests/images/IMG_1724.JPG" alt="" />
+        <!-- About me and photo -->
+        <div class="container">
+          <section class="introduction">
+            <h1>Muayad Alsawalhi</h1>
+            <p class="intro-text">
+              Frontend-focused developer learning to turn ideas into fast,
+              user-friendly web experiences using HTML, CSS, JavaScript, and
+              modern tools.
+            </p>
+
+            <a
+              href="http://127.0.0.1:5500/pages/contact-us.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="get-started"
+            >
+              <button type="button" class="btn get-started">
+                Let's get started <i class="bi bi-caret-right"></i>
+              </button>
+            </a>
+          </section>
+
+          <section class="profile-picture">
+            <img src="/assests/images/IMG_1724.JPG" alt="" />
+          </section>
+        </div>
+
+        <!-- Skills and experience sections -->
+        <section class="skills">
+          <div class="section-head">
+            <h2>My Coding Skills</h2>
+          </div>
+          <div class="skill-icons">
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-square-js"></i>
+            <i class="fa-brands fa-git"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-bootstrap"></i>
+          </div>
         </section>
-      </div>
+      </main>
 
-      <section class="skills" id="skills">
-        skills i learned in codecademy
-      </section>
-    </main>
-
-    <!-- Footer section -->
-    <footer>
-      <p>Made with 🧡 in Dubai</p>
-    </footer>
+      <!-- Footer section -->
+      <footer>
+        <p>Made with 🧡 in Dubai</p>
+      </footer>
+    </div>
 
     <!-- JS Theme Script -->
     <script src="/assests/scripts/dark-light-mode.js"></script>
