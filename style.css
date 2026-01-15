@@ -186,7 +186,7 @@ main {
   gap: 30px;
 }
 
-h1 {
+.introduction h1 {
   font-size: 3rem;
   margin: 0;
   font-family: "Raleway";
@@ -275,6 +275,79 @@ a.get-started:active {
   gap: 30px;
   font-size: 3rem;
   color: var(--text-color-secondary);
+}
+
+/* get in touch styling */
+
+section.get-in-touch {
+  width: 100%;
+  margin: 20px auto;
+}
+
+form {
+  border: 2px solid var(--forground-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px 50px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+form h1 {
+  color: var(--text-color-primary);
+  font-family: "Raleway";
+  text-align: center;
+}
+
+form p {
+  color: var(--text-color-secondary);
+}
+
+label {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 7px;
+}
+
+.form-control {
+  padding: 10px 5px;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  color: var(--text-color-primary);
+  border: 1px solid;
+  border-color: var(--accent-color-secondary);
+  border-radius: 7px;
+  background-color: var(--bg-color);
+}
+
+textarea {
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  background-color: var(--forground-color);
+  border: 1px solid;
+  border-color: var(--accent-color-secondary);
+  border-radius: 7px;
+  background-color: var(--bg-color);
+}
+
+.submit-btn {
+  /* height: 30px; */
+  width: 110px;
+  padding: 5px;
+  font-size: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--accent-color-primary);
+  border: 2px solid var(--accent-color-secondary);
+  border-radius: 12px;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-color-primary);
+  color: var(--text-color-primary);
 }
 
 /* Footer style */
