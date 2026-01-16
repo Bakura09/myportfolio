@@ -2,8 +2,8 @@
 
 // Access the DOM
 let switchIcon = document.getElementById("themeToggle");
-const lightIcon = "bi bi-brightness-high btn";
-const darkIcon = "bi bi-moon-stars-fill btn";
+const lightIcon = "bi bi-sun-fill btn";
+const darkIcon = "bi bi-moon-fill btn";
 const darkTheme = "dark";
 const lightTheme = "light";
 
