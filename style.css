@@ -2,6 +2,10 @@
 
 @import url(./assests/css/variables.css);
 
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color-primary);
@@ -70,7 +74,7 @@ body {
   visibility: hidden;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 4.25rem;
 }
 
 /* Navigation bar  */
@@ -145,12 +149,12 @@ a.focus {
 /* Main content style */
 main {
   width: 70%;
-  margin: 4.375rem auto 4.375rem;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 6.25rem;
+  gap: 8.25rem;
 }
 
 main section {
@@ -242,7 +246,6 @@ button:hover {
 /* Skills section */
 section.skills {
   color: var(--text-color-primary);
-  margin: 1.25rem auto;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
@@ -279,8 +282,8 @@ section.skills {
 /* get in touch styling */
 
 section.get-in-touch {
-  margin: 1.25rem auto;
-  width: 70%;
+  margin: 4.375rem auto 4.375rem;
+  width: 40%;
 }
 
 form {
