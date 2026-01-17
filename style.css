@@ -182,7 +182,7 @@ main section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6.25rem;
+  gap: 10.25rem;
 }
 
 .introduction {
@@ -229,7 +229,9 @@ button.get-started {
   text-align: center;
   border: 1px solid #62ba1b;
   border-radius: 2px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(63, 142, 0, 0.5),
+  box-shadow:
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(63, 142, 0, 0.5),
     0 0 20px rgba(98, 186, 27, 0.4);
 }
 
@@ -261,10 +263,17 @@ section.skills {
 
 /* Projects Section */
 .projects-list {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  overflow: auto;
+}
+
+.projects-list img {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* get in touch styling */
