@@ -75,10 +75,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4.25rem;
+  margin-top: 7.5rem;
+  position: relative;
 }
 
 /* Navigation bar  */
 nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--forground-color);
   color: var(--text-color-secondary);
   font-size: 1.27rem;

@@ -11,3 +11,7 @@ setTimeout(() => {
   loaderContainer.style.visibility = "hidden";
   pageWrapper.style.visibility = "visible";
 }, 3000);
+
+// window.addEventListener("load", (event) => {
+//   console.log("page is fully loaded");
+// });
