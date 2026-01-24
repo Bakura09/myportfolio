@@ -85,6 +85,7 @@ nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
   background-color: var(--forground-color);
   color: var(--text-color-secondary);
   font-size: 1.27rem;
@@ -177,12 +178,14 @@ main section h2 {
   text-align: center;
 }
 
-.changing-text-heading,
-.changing-text {
+.interactive-text h2 {
   font-size: 3rem;
+  font-family: "IBM Plex Mono";
+  color: var(--text-color-primary);
 }
 
-.changing-text {
+.interactive-text span {
+  font-size: 3rem;
   font-family: "IBM Plex Mono";
   color: var(--accent-color-primary);
 }
@@ -372,4 +375,55 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 430px) {
+  html {
+    font-size: 9px;
+  }
+
+  nav {
+    z-index: 1;
+  }
+
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .interactive-text h2 {
+    font-size: 2rem;
+    font-family: "Raleway";
+    color: var(--text-color-primary);
+  }
+
+  .interactive-text span {
+    font-size: 2rem;
+    font-family: "Raleway";
+    color: var(--accent-color-primary);
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 8rem;
+  }
+
+  .introduction {
+    text-align: center;
+  }
+
+  .introduction h1,
+  .introduction a {
+    margin: 0 auto;
+  }
+
+  .profile-picture img {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  section.get-in-touch {
+    margin: 3rem auto;
+    width: 70%;
+  }
 }
