@@ -14,82 +14,19 @@ body {
   margin: 0;
 }
 
-/* Screen loader */
-.loader-container {
-  visibility: visible;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2.5rem;
-  height: 100lvh;
-  width: 100lvw;
-  position: fixed;
-}
-
-.loader {
-  height: 3.75rem;
-  aspect-ratio: 1;
-  position: relative;
-  border: 3px solid #0000;
-}
-.loader:before {
-  content: "";
-  position: absolute;
-  inset: auto 35% 0;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--accent-color-primary);
-  animation: l6-0 0.5s cubic-bezier(0, 800, 1, 800) infinite;
-}
-.loader:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  outline: 3px solid #524656;
-  animation: l6-1 0.5s linear infinite;
-}
-@keyframes l6-0 {
-  0%,
-  2% {
-    bottom: 0%;
-  }
-  98%,
-  to {
-    bottom: 0.1%;
-  }
-}
-@keyframes l6-1 {
-  0%,
-  30% {
-    rotate: 0deg;
-  }
-  70%,
-  to {
-    rotate: 90deg;
-  }
-}
-
+/* Page contents */
 .page-wrapper {
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   gap: 4.25rem;
-  margin-top: 7.5rem;
-  position: relative;
 }
 
 /* Navigation bar  */
 nav {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
   background-color: var(--forground-color);
   color: var(--text-color-secondary);
   font-size: 1.27rem;
-  width: 80%;
+  width: 90%;
   height: 6.25rem;
   margin: 0 auto 0;
   display: flex;
@@ -274,29 +211,49 @@ section.skills {
 }
 
 /* Projects Section */
-.projects-list {
-  width: 100%;
+.projects-list ul {
+  list-style: none;
+  padding: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
-  overflow: auto;
+  gap: 0.7rem;
+  overflow: scroll;
 }
 
-.projects-list img {
-  width: 2rem;
-  height: 2rem;
+.project-card {
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+a.project-link:hover {
+  text-decoration: none;
+}
+
+.card-icon {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+#folder_code {
+  font-size: 2rem;
+}
+
+#arrow_outward {
+  font-size: 0.9rem;
 }
 
 /* get in touch styling */
-
 section.get-in-touch {
-  margin: 4.375rem auto 4.375rem;
-  width: 40%;
+  margin: 5.375rem auto;
+  width: 50%;
 }
 
 form {
-  border: 2px solid var(--forground-color);
+  border: 2px solid var(--accent-color-secondary);
   border-radius: 0.75rem;
   display: flex;
   justify-content: center;
@@ -319,27 +276,31 @@ form p {
 
 label {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 0.4375rem;
 }
 
 .form-control {
   padding: 0.625rem 0.625rem;
   margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--text-color-primary);
   border: 1px solid;
-  border-color: var(--accent-color-secondary);
+  border-color: var(--forground-color);
   border-radius: 0.4375rem;
   background-color: var(--bg-color);
+}
+
+.form-control:focus-visible {
+  outline: solid 2px var(--accent-color-secondary);
 }
 
 textarea {
   padding: 0.625rem 0.625rem;
   margin-bottom: 0.9375rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 1px solid;
-  border-color: var(--accent-color-secondary);
+  border-color: var(--forground-color);
   border-radius: 0.4375rem;
   background-color: var(--bg-color);
   color: var(--text-color-primary);
@@ -360,6 +321,7 @@ textarea {
 .submit-btn:hover {
   background-color: var(--accent-color-primary);
   color: var(--text-color-primary);
+  cursor: pointer;
 }
 
 /* Footer style */
