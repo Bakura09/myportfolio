@@ -384,8 +384,50 @@ footer {
     height: 20rem;
   }
 
+  .projects-list {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .projects-list ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   section.get-in-touch {
     margin: 3rem auto;
     width: 70%;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  html {
+    font-size: 10px;
+  }
+
+  .interactive-text h2 {
+    font-size: 2.5rem;
+    font-family: "Raleway";
+    color: var(--text-color-primary);
+  }
+
+  .interactive-text span {
+    font-size: 2.5rem;
+    font-family: "Raleway";
+    color: var(--accent-color-primary);
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .profile-picture img {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .projects-list ul {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
