@@ -31,6 +31,15 @@
     <div class="page-wrapper">
       <!-- Navigation Bar -->
       <nav>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+        <label
+          for="nav-toggle"
+          class="menu-toggle"
+          aria-label="Open navigation menu"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </label>
+
         <!-- nav page navigation -->
         <div class="nav-items">
           <span><a href="#about" class="item-link">About Me</a></span>
@@ -46,6 +55,7 @@
             <a
               href="https://www.linkedin.com/in/muayad-alsawalhi-229119123/"
               target="_blank"
+              rel="noopener noreferrer"
               class="icon-link"
             >
               <i class="fa-brands fa-square-linkedin"></i>
@@ -53,11 +63,17 @@
             <a
               href="https://github.com/Bakura09?tab=repositories"
               target="_blank"
+              rel="noopener noreferrer"
               class="icon-link"
             >
               <i class="fa-brands fa-square-github"></i>
             </a>
-            <a href="https://behance.com" target="_blank" class="icon-link">
+            <a
+              href="https://behance.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="icon-link"
+            >
               <i class="fa-brands fa-square-behance"></i>
             </a>
           </div>
@@ -74,7 +90,7 @@
 
         <!-- About me and photo -->
         <section class="container">
-          <div class="introduction" id="about-me">
+          <div class="introduction" id="about">
             <h1>Muayad Alsawalhi</h1>
             <p class="intro-text">
               Frontend-focused developer learning to turn ideas into fast,
@@ -87,14 +103,15 @@
               rel="noopener noreferrer"
               class="get-started"
             >
-              <button type="button" class="btn get-started">
-                Let's get started <i class="bi bi-caret-right"></i>
-              </button>
+              Let's get started <i class="bi bi-caret-right"></i>
             </a>
           </div>
 
           <div class="profile-picture">
-            <img src="/assests/images/IMG_1724.JPG" alt="" />
+            <img
+              src="/assests/images/IMG_1724.JPG"
+              alt="Profile picture of Muayad Alsawalhi"
+            />
           </div>
         </section>
 
@@ -126,10 +143,10 @@
                     class="project-link"
                   >
                     <div class="card-icon">
-                      <span class="material-symbols-outlined" id="folder_code">
+                      <span class="material-symbols-outlined folder-code">
                         folder_code</span
                       >
-                      <span class="material-symbols-outlined" id="arrow_outward"
+                      <span class="material-symbols-outlined arrow-outward"
                         >arrow_outward</span
                       >
                     </div>
@@ -147,10 +164,10 @@
                     class="project-link"
                   >
                     <div class="card-icon">
-                      <span class="material-symbols-outlined" id="folder_code">
+                      <span class="material-symbols-outlined folder-code">
                         folder_code</span
                       >
-                      <span class="material-symbols-outlined" id="arrow_outward"
+                      <span class="material-symbols-outlined arrow-outward"
                         >arrow_outward</span
                       >
                     </div>
@@ -168,10 +185,31 @@
                     class="project-link"
                   >
                     <div class="card-icon">
-                      <span class="material-symbols-outlined" id="folder_code">
+                      <span class="material-symbols-outlined folder-code">
                         folder_code</span
                       >
-                      <span class="material-symbols-outlined" id="arrow_outward"
+                      <span class="material-symbols-outlined arrow-outward"
+                        >arrow_outward</span
+                      >
+                    </div>
+                  </a>
+                  <h3 class="card-header">Project Name</h3>
+                  <p class="card-desc">This is project description</p>
+                </div>
+              </li>
+              <li>
+                <div class="project-card">
+                  <a
+                    href="http://"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    <div class="card-icon">
+                      <span class="material-symbols-outlined folder-code">
+                        folder_code</span
+                      >
+                      <span class="material-symbols-outlined arrow-outward"
                         >arrow_outward</span
                       >
                     </div>
@@ -212,9 +250,9 @@
 
           <label for="budget">Budget</label>
           <select name="budget" id="budget" class="form-control">
-            <option value="$500">&lt;$500</option>
-            <option value="$500">&lt;$1000</option>
-            <option value="$500">&lt;$5000</option>
+            <option value="under-500">&lt;$500</option>
+            <option value="under-1000">&lt;$1000</option>
+            <option value="under-5000">&lt;$5000</option>
           </select>
 
           <label for="message">Message</label>
