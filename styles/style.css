@@ -382,6 +382,23 @@ textarea {
   cursor: pointer;
 }
 
+/* Google Form styling */
+section.google-form {
+  margin: 5.375rem auto;
+  width: min(90%, 700px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-form iframe {
+  border: 2px solid var(--accent-color-secondary);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 640px;
+  height: 1148px;
+}
+
 /* Footer style */
 
 footer {
@@ -486,6 +503,16 @@ footer {
   }
 
   section.get-in-touch {
+    margin: 3rem auto;
+    width: 70%;
+  }
+
+  section.google-form {
+    margin: 3rem auto;
+    width: 70%;
+  }
+
+  section.google-form {
     margin: 3rem auto;
     width: 70%;
   }
