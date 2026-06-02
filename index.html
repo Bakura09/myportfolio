@@ -77,6 +77,13 @@
               <i class="fa-brands fa-square-behance"></i>
             </a>
           </div>
+          <label class="theme-switch" for="theme-toggle" aria-label="Toggle theme">
+            <input type="checkbox" id="theme-toggle" class="theme-toggle-input" />
+            <span class="theme-toggle-slider">
+              <span class="material-symbols-outlined sun-icon">light_mode</span>
+              <span class="material-symbols-outlined moon-icon">dark_mode</span>
+            </span>
+          </label>
         </div>
       </nav>
       <!-- Main Content -->
@@ -290,6 +297,30 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Theme preference toggle with local persistence.
+        var themeToggle = document.getElementById("theme-toggle");
+        var storedTheme = localStorage.getItem("theme");
+        var preferredTheme =
+          storedTheme ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+
+        var applyTheme = function (theme) {
+          document.body.setAttribute("data-theme", theme);
+          if (themeToggle) themeToggle.checked = theme === "dark";
+        };
+
+        applyTheme(preferredTheme);
+
+        if (themeToggle) {
+          themeToggle.addEventListener("change", function () {
+            var nextTheme = themeToggle.checked ? "dark" : "light";
+            applyTheme(nextTheme);
+            localStorage.setItem("theme", nextTheme);
+          });
+        }
+
         var typed = new Typed(".changing-text", {
           strings: [
             "Interactive user interfaces",
