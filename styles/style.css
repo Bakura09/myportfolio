@@ -42,12 +42,19 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   font-size: 1rem;
   color: var(--text-primary);
   background-color: var(--bg);
-  background-image:
-    radial-gradient(circle at 1px 1px, var(--body-noise) 1px, transparent 0);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--body-noise) 1px,
+    transparent 0
+  );
   background-size: 3px 3px;
   line-height: 1.7;
 }
@@ -295,14 +302,6 @@ form h1 {
   color: var(--accent);
 }
 
-/* Blinking cursor after hero headline */
-.changing-text-heading::after {
-  content: "|";
-  color: var(--accent);
-  margin-left: 0.35rem;
-  animation: blink-cursor 850ms steps(1, end) infinite;
-}
-
 @keyframes blink-cursor {
   50% {
     opacity: 0;
@@ -523,6 +522,10 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 0.55rem;
   background: var(--input-bg);
+}
+
+textarea {
+  resize: none;
 }
 
 .form-control:focus-visible,
