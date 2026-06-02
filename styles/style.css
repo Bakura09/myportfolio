@@ -1,9 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
-@import url(/assests/css/variables.css);
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-soft: #111111;
+  --text-primary: #e5e5e5;
+  --text-secondary: #b3b3b3;
+  --border: #262626;
+  --accent: #6ee7b7;
+  --accent-soft: rgba(110, 231, 183, 0.18);
+}
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -13,60 +24,69 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color-primary);
-  font-family: "IBM Plex Mono";
-  font-size: 1rem;
   margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0);
+  background-size: 3px 3px;
+  line-height: 1.7;
 }
 
-/* Page contents */
 .page-wrapper {
   width: min(100%, 1400px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4.25rem;
+  gap: 6rem;
+  padding-bottom: 4rem;
 }
 
-/* Navigation bar  */
 nav {
-  background-color: var(--forground-color);
-  color: var(--text-color-secondary);
-  font-size: 1.27rem;
-  width: 90%;
-  height: 6.25rem;
-  margin: 0 auto 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  min-height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 3.125rem;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
+  gap: 1rem;
+  padding: 1rem 2.25rem;
+  color: var(--text-secondary);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
 }
 
-/* Menu items styles */
-.nav-items {
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
+nav.scrolled {
+  border-bottom-color: var(--border);
 }
 
-/* SocialMedia Links icons */
+.nav-items,
 .social-icons {
   width: fit-content;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 4.375rem;
+}
+
+.nav-items {
+  gap: 2.5rem;
+}
+
+.social-icons {
+  gap: 2.5rem;
 }
 
 .icons {
   display: flex;
-  gap: 1.5625rem;
-  font-size: 2rem;
+  gap: 1.25rem;
+  font-size: 1.65rem;
 }
 
 .nav-toggle-input {
@@ -76,32 +96,14 @@ nav {
 .menu-toggle {
   display: none;
   background: transparent;
-  color: var(--text-color-secondary);
   border: none;
+  color: var(--text-primary);
   cursor: pointer;
   padding: 0.5rem;
-  font-size: 1.8rem;
 }
 
 .menu-toggle .material-symbols-outlined {
-  font-size: 2.25rem;
-}
-
-.theme {
-  padding-bottom: 0.187rem;
-}
-
-.bi {
-  font-size: 1.89rem;
-}
-
-a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-i:hover {
-  cursor: pointer;
+  font-size: 2.1rem;
 }
 
 a {
@@ -109,14 +111,31 @@ a {
   text-decoration: none;
 }
 
-a:visited,
-a:hover,
-a:active,
-a:focus {
-  color: inherit;
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 0.2rem;
+  background: var(--accent);
+  transition: width 220ms ease;
 }
 
-/* Main content style */
+a:hover::after,
+a:focus-visible::after {
+  width: 100%;
+}
+
+a:hover,
+i:hover {
+  cursor: pointer;
+}
+
+.item-link:hover,
+.icon-link:hover {
+  color: var(--accent);
+}
+
 main {
   width: min(90%, 1100px);
   margin: 0 auto;
@@ -124,78 +143,134 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 8.25rem;
+  gap: 10rem;
 }
 
 main section {
   width: 100%;
 }
 
-main section h2 {
-  font-family: "Raleway";
-  font-size: 3rem;
+/* Fade-in sections on scroll */
+main section,
+.get-in-touch,
+.google-form {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
 }
 
-/* Interactive text Section */
+main section.is-visible,
+.get-in-touch.is-visible,
+.google-form.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main section h2,
+form h1 {
+  margin: 0 0 1.25rem;
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Numbered section heading style */
+.skills-head h2::before,
+.projects > h2::before,
+.get-in-touch h1::before {
+  color: var(--accent);
+  font-family: "Fira Code", monospace;
+  font-weight: 600;
+  margin-right: 0.55rem;
+}
+
+.skills-head h2::before {
+  content: "// 01. about";
+}
+
+.projects > h2::before {
+  content: "// 02. work";
+}
+
+.get-in-touch h1::before {
+  content: "// 03. contact";
+  display: block;
+  margin-right: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
 .interactive-text {
   text-align: center;
 }
 
 .interactive-text h2 {
-  font-size: 3rem;
-  font-family: "IBM Plex Mono";
-  color: var(--text-color-primary);
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  font-family: "Fira Code", monospace;
+  margin: 0;
 }
 
 .interactive-text span {
-  font-size: 3rem;
-  font-family: "IBM Plex Mono";
-  color: var(--accent-color-primary);
+  color: var(--accent);
 }
 
-/* Profile-hero */
+/* Blinking cursor after hero headline */
+.changing-text-heading::after {
+  content: "|";
+  color: var(--accent);
+  margin-left: 0.35rem;
+  animation: blink-cursor 850ms steps(1, end) infinite;
+}
+
+@keyframes blink-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10.25rem;
+  gap: 7.5rem;
 }
 
 .introduction {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.875rem;
+  gap: 1.5rem;
 }
 
 .introduction h1 {
-  font-size: 3rem;
   margin: 0;
-  font-family: "Raleway";
+  font-family: "Fira Code", monospace;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .introduction p.intro-text {
-  color: var(--text-color-secondary);
-  /* font-family: "IBM Plex Mono"; */
-  font-size: 1.5rem;
-  margin-top: 0.625rem;
-  margin-bottom: 3.125rem;
-  min-width: 0;
-  overflow-wrap: break-word;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2.1vw, 1.35rem);
+  max-width: 34ch;
 }
 
 img {
   width: 31.25rem;
-  height: auto;
   max-width: 100%;
-  border-radius: 3.75rem;
+  height: auto;
+  border-radius: 2rem;
 }
 
 .profile-picture img {
   display: block;
   width: 100%;
-  height: auto;
-  max-width: 31.25rem;
+  max-width: 28rem;
+  border: 1px solid var(--border);
 }
 
 .get-started {
@@ -203,332 +278,262 @@ img {
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  min-width: 18rem;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--accent-color-primary);
-  color: var(--text-color-primary);
-  font-family: "IBM Plex Mono";
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: center;
-  border: 1px solid #62ba1b;
+  min-width: 16rem;
+  padding: 0.95rem 1.25rem;
+  margin-top: 0.5rem;
+  font-family: "Fira Code", monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
-  box-shadow:
-    0 0 6px rgba(255, 255, 255, 0.8),
-    0 0 12px rgba(63, 142, 0, 0.5),
-    0 0 20px rgba(98, 186, 27, 0.4);
-  text-decoration: none;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .get-started:hover,
 .get-started:focus-visible {
-  text-decoration: none;
-  cursor: pointer;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.28);
   outline: none;
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.9),
-    0 0 14px rgba(63, 142, 0, 0.6),
-    0 0 22px rgba(98, 186, 27, 0.5);
 }
 
-/* Skills section */
 section.skills {
-  color: var(--text-color-primary);
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 1.15rem;
 }
 
-.skills-head h2 {
-  font-family: "Raleway";
-  font-size: 3rem;
+.skills-head h2,
+.projects > h2 {
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
 }
 
 .skill-icons {
-  color: var(--text-color-secondary);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: 1.875rem;
-  font-size: 3rem;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  font-size: 2.7rem;
 }
 
-/* Projects Section */
+.skill-icons i {
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.skill-icons i:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
 .projects-list ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  overflow-x: auto;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
 }
 
 .projects-list ul li {
-  min-width: 20rem;
+  min-width: 0;
 }
 
+/* Dark bordered cards with subtle lift */
 .project-card {
   width: 100%;
-  min-width: 20rem;
-  max-width: 22rem;
-  min-height: 20rem;
+  min-height: 17.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
   padding: 1.5rem;
-  background-color: var(--forground-color);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
   border-radius: 1rem;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
-a.project-link:hover {
-  text-decoration: none;
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+a.project-link:hover::after {
+  width: 0;
 }
 
 .card-icon {
   display: flex;
   align-items: baseline;
-  gap: 0.2rem;
+  gap: 0.35rem;
 }
 
 .folder-code {
   font-size: 2rem;
+  color: var(--accent);
 }
 
 .arrow-outward {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
 }
 
-/* get in touch styling */
+.card-header {
+  margin: 0;
+  font-family: "Fira Code", monospace;
+  font-size: 1.2rem;
+}
+
+.card-desc {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
 section.get-in-touch {
-  margin: 5.375rem auto;
-  width: min(90%, 700px);
-  font-family: "Raleway", sans-serif;
-  line-height: 1.6;
+  margin: 1rem auto 0;
+  width: min(90%, 760px);
 }
 
 form {
   width: 100%;
-  border: 2px solid var(--accent-color-secondary);
-  border-radius: 0.75rem;
+  padding: 2.8rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 3.25rem;
-  margin: 0 auto;
 }
 
 form h1 {
-  color: var(--text-color-primary);
-  font-family: "Raleway", sans-serif;
-  font-size: 2.4rem;
-  line-height: 1.1;
-  text-align: center;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
 }
 
 form p {
-  color: var(--text-color-secondary);
-  font-size: 1.2rem;
+  margin: 0 0 0.6rem;
+  color: var(--text-secondary);
 }
 
 label {
-  color: #ffffff;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 1.35rem;
-  margin-bottom: 0.4375rem;
+  color: var(--text-primary);
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
 }
 
-.form-control {
-  padding: 0.75rem 0.75rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.25rem;
-  color: var(--text-color-primary);
-  border: 1px solid;
-  border-color: var(--forground-color);
-  border-radius: 0.4375rem;
-  background-color: var(--bg-color);
-}
-
-.form-control:focus-visible {
-  outline: solid 2px var(--accent-color-secondary);
-}
-
+.form-control,
 textarea {
-  padding: 0.75rem 0.75rem;
-  margin-bottom: 0.9375rem;
-  font-size: 1.25rem;
-  border: 1px solid;
-  border-color: var(--forground-color);
-  border-radius: 0.4375rem;
-  background-color: var(--bg-color);
-  color: var(--text-color-primary);
+  width: 100%;
+  padding: 0.8rem 0.85rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: #0e0e0e;
+}
+
+.form-control:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
 }
 
 .submit-btn {
-  width: 8.5rem;
-  padding: 0.5rem;
-  font-size: 1.65rem;
-  background-color: var(--bg-color);
-  color: var(--accent-color-primary);
-  border: 2px solid var(--accent-color-secondary);
-  border-radius: 0.75rem;
-  font-family: "IBM Plex Mono", monospace;
+  width: fit-content;
+  min-width: 7rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 0.65rem;
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .submit-btn:hover {
-  background-color: var(--accent-color-primary);
-  color: var(--text-color-primary);
-  cursor: pointer;
+  background-color: var(--accent);
+  color: #08110d;
 }
 
-/* Google Form styling */
 section.google-form {
-  margin: 5.375rem auto;
-  width: min(90%, 700px);
+  margin: 1rem auto;
+  width: min(90%, 760px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .google-form iframe {
-  border: 2px solid var(--accent-color-secondary);
-  border-radius: 0.75rem;
   width: 100%;
   max-width: 640px;
   height: 1148px;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-soft);
 }
 
-/* Footer style */
-
 footer {
-  font-family: "IBM Plex Mono";
-  color: var(--text-color-secondary);
-  font-size: 1.1rem;
-  text-align: center;
-  width: 100%;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: min(90%, 1100px);
+  margin: 0 auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
 }
 
-@media only screen and (max-width: 430px) {
-  html {
-    font-size: 9px;
-  }
-
-  nav {
-    z-index: 1;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-inline: 1rem;
-    padding-block: 0.75rem;
-    height: auto;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  .nav-items,
-  .social-icons {
-    display: none;
-    width: 100%;
-  }
-
-  .nav-toggle-input:checked ~ .nav-items,
-  .nav-toggle-input:checked ~ .social-icons {
-    display: flex;
-  }
-
-  .nav-items {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .social-icons {
-    justify-content: flex-start;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  main {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .interactive-text h2 {
-    font-size: 2rem;
-    font-family: "Raleway";
-    color: var(--text-color-primary);
-  }
-
-  .interactive-text span {
-    font-size: 2rem;
-    font-family: "Raleway";
-    color: var(--accent-color-primary);
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 8rem;
-  }
-
-  .introduction {
-    text-align: center;
-  }
-
-  .introduction h1,
-  .introduction a {
-    margin: 0 auto;
-  }
-
-  .profile-picture img {
-    width: 20rem;
-    height: 20rem;
-  }
-
-  .projects-list {
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .projects-list ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  section.get-in-touch {
-    margin: 3rem auto;
-    width: 70%;
-  }
-
-  section.google-form {
-    margin: 3rem auto;
-    width: 70%;
-  }
-
-  section.google-form {
-    margin: 3rem auto;
-    width: 70%;
-  }
+/* Accent cursor dot shown only on desktop */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(110, 231, 183, 0.42);
+  pointer-events: none;
+  z-index: 1100;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 180ms ease;
 }
 
 @media only screen and (max-width: 786px) {
   html {
-    font-size: 10px;
+    font-size: 14px;
+  }
+
+  .page-wrapper {
+    gap: 4.25rem;
   }
 
   nav {
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0.8rem;
     padding-inline: 1rem;
-    gap: 1rem;
-    height: auto;
+    min-height: auto;
   }
 
   .menu-toggle {
@@ -548,40 +553,43 @@ footer {
 
   .nav-items {
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-top: 0.2rem;
   }
 
   .social-icons {
     justify-content: flex-start;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 0.45rem;
   }
 
-  .interactive-text h2 {
-    font-size: 2.5rem;
-    font-family: "Raleway";
-    color: var(--text-color-primary);
-  }
-
-  .interactive-text span {
-    font-size: 2.5rem;
-    font-family: "Raleway";
-    color: var(--accent-color-primary);
+  main {
+    gap: 6.5rem;
   }
 
   .container {
     flex-direction: column;
+    gap: 3.2rem;
   }
 
-  .profile-picture img {
-    width: 100%;
-    height: auto;
-    max-width: 30rem;
+  .introduction {
+    text-align: center;
+    align-items: center;
+  }
+
+  .introduction p.intro-text {
+    max-width: 40ch;
   }
 
   .projects-list ul {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 2rem 1.2rem;
+  }
+
+  .cursor-dot {
+    display: none;
   }
 }
