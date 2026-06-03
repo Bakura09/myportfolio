@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var typed = new Typed(".changing-text", {
     strings: [
-      "Interactive user interfaces",
-      "Responsive web experiences",
-      "Accessible front-ends",
-      "Performant UI systems",
+      "Micro-interactions",
+      "Pixel-perfect UI",
+      "Content-first layouts",
+      "Speed-optimized",
+      "Accessibility-first",
     ],
     typeSpeed: 70,
     backDelay: 700,
