@@ -197,7 +197,7 @@ a {
   text-decoration: none;
 }
 
-a::after {
+/* a::after {
   content: "";
   display: block;
   width: 0;
@@ -205,7 +205,7 @@ a::after {
   margin-top: 0.2rem;
   background: var(--accent);
   transition: width 220ms ease;
-}
+} */
 
 a:hover::after,
 a:focus-visible::after {
@@ -526,7 +526,7 @@ textarea {
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
 }
 
 .form-control:focus-visible,
