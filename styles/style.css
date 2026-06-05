@@ -164,11 +164,11 @@ nav.scrolled {
 }
 
 .sun-icon {
-  color: #eab308;
+  color: var(--accent);
 }
 
 .moon-icon {
-  color: #7c3aed;
+  color: var(--accent);
 }
 
 .theme-toggle-input:focus-visible + .theme-toggle-slider {
